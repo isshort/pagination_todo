@@ -11,21 +11,22 @@ class ItemPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          const MenuList(),
-          BlocBuilder<LoadDataCubit, LoadDataState>(
-            builder: (context, state) {
-              if (state is LoadDataSuccess) {
-                return Expanded(
-                    child: ItemPagination(
-                  itemsList: (page) async => state.itemList,
-                ));
-              }
-              return const CircularProgressIndicator();
-            },
-          ),
-        ],
+      body: BlocBuilder<LoadDataCubit, LoadDataState>(
+        builder: (context, state) {
+          if (state is LoadDataSuccess) {
+            return Column(
+              children: [
+                const SizedBox(height: 40, child: MenuList()),
+                Expanded(child: ItemPagination(
+                  itemsList: (page) async {
+                    return context.read<LoadDataCubit>().fetchData(page);
+                  },
+                )),
+              ],
+            );
+          }
+          return const CircularProgressIndicator();
+        },
       ),
     );
   }

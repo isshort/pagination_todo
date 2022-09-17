@@ -34,7 +34,6 @@ class _ItemPaginationState extends State<ItemPagination> {
 
   @override
   Widget build(BuildContext context) {
-    print('Hello ');
     return PagedListView<int, String>(
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate<String>(

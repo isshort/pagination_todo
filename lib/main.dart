@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pagination_todo/bootstrap.dart';
 import 'package:pagination_todo/view/items_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  bootstrap(
+    () => const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
