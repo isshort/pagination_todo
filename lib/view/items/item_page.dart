@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../logic/load_data/load_data_cubit.dart';
+import '../../logic/load_data/load_data_cubit.dart';
 import 'items_pagination.dart';
-import 'menu_list.dart';
 
 class ItemPage extends StatelessWidget {
   const ItemPage({Key? key}) : super(key: key);
@@ -16,7 +15,7 @@ class ItemPage extends StatelessWidget {
           if (state is LoadDataSuccess) {
             return Column(
               children: [
-                const SizedBox(height: 40, child: MenuList()),
+                // const SizedBox(height: 40, child: MenuList()),
                 Expanded(child: ItemPagination(
                   itemsList: (page) async {
                     return context.read<LoadDataCubit>().fetchData(page);

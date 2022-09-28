@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pagination_todo/bootstrap.dart';
-import 'package:pagination_todo/view/items_screen.dart';
+import 'package:pagination_todo/view/people/people_view.dart';
 
 void main() {
   // runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ItemsScreen(),
+      home: const PeopleView(),
     );
   }
 }
