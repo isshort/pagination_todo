@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pagination_todo/bootstrap.dart';
-import 'package:pagination_todo/view/people/people_view.dart';
+
+import 'bloc_inifite_list/view/posts_page.dart';
 
 void main() {
   // runApp(const MyApp());
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PeopleView(),
+      home: const PostsPage(),
+      // home: const PeopleView(),
     );
   }
 }

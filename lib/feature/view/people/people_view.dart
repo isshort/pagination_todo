@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pagination_todo/view/people/people_cubit.dart';
+import 'package:pagination_todo/feature/view/people/people_cubit.dart';
+
 import 'package:very_good_infinite_list/very_good_infinite_list.dart';
 
 class PeopleView extends StatelessWidget {

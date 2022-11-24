@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pagination_todo/logic/load_data/load_data_cubit.dart';
+
+import '../../logic/load_data/load_data_cubit.dart';
 
 class MenuList extends StatelessWidget {
   const MenuList({

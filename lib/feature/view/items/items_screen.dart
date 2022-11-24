@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pagination_todo/logic/change_page/change_page_cubit.dart';
-import 'package:pagination_todo/logic/load_data/load_data_cubit.dart';
 
+import '../../logic/change_page/change_page_cubit.dart';
+import '../../logic/load_data/load_data_cubit.dart';
 import 'item_page.dart';
 
 class ItemsScreen extends StatelessWidget {
