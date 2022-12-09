@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:http/http.dart' as http;
+import 'package:pagination_todo/bloc_inifite_list/data/service/post_service.dart';
+import 'package:pagination_todo/bloc_inifite_list/view/cubit/post_cubit.dart';
 
-import '../bloc/post_bloc.dart';
-import 'post_list.dart';
+import '../data/repo/post_repo.dart';
+import 'post_screen.dart';
 
-class PostsPage extends StatelessWidget {
-  const PostsPage({super.key});
+class PostPage extends StatefulWidget {
+  const PostPage({Key? key}) : super(key: key);
+
+  @override
+  State<PostPage> createState() => _PostPageState();
+}
+
+class _PostPageState extends State<PostPage> {
+  late final PostsRepository repository;
+  @override
+  void initState() {
+    super.initState();
+    repository = PostsRepository(PostService());
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Posts')),
-      body: BlocProvider(
-        lazy: true,
-        create: (_) => PostBloc(httpClient: http.Client())..add(PostFetched()),
-        child: const PostsList(),
-      ),
+    return BlocProvider(
+      create: (context) => PostCubit(repository),
+      child: const PostsScreen(),
     );
   }
 }
